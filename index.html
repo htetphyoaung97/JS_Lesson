@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vocher Field</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav style="background-color: antiquewhite;width: 700px;margin: 0 auto;padding: 18px;">
+            <div style="text-align: center;">
+                <img alt="Logo" id="choose_logo" style="width: 50px;height:50px;">
+            </div>
+            <div>
+                <p><span><i class="fas fa-building"></i></span> Company Name : <span id="name"></span></p>
+                <p><span><i class="fas fa-phone-alt"></i></span> Company Phone Number : <span id="phone"></span></p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> Company Address : <span id="address"></span></p>
+            </div>
+            <div style="width:60%;display: inline-block;">
+
+                <p><span><i class="fas fa-user"></i></span> Name : <span></span></p>
+                <p><span><i class="fas fa-phone-alt"></i></span> Phone Number : <span></span></p>
+
+            </div>
+            <div style="width:39%;display: inline-block;">
+
+                <p><span><i class="fas fa-calendar-day"></i> Date : <span></span></p>
+                <p><span><i class="fas fa-ticket-alt"></i></span> Vouncher ID : <span></span></p>
+
+            </div>
+          
+            <table class="main_table">
+                <tr>
+                    <th>No#</th>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div style="text-align: right;">
+                <span>Discount: </span><p style="width: 132px; height:18px; border:1px solid; display: inline-block; margin:0px; padding:8px;">0</p>
+            </div>
+            <div style="text-align: right;margin-top: 2px;">
+                <span>Total: </span><p style="width: 132px; height:18px; border:1px solid; display: inline-block; margin:0px; padding:8px;">0</p>
+            </div>
+           
+        </nav>
+    </header>
+    <section>
+        <div style="width: 900px;margin: 0 auto;padding: 18px;">
+            <div style="width: 24.75%;border: 1px solid;padding: 10px;">
+                <p>Company Info</p>
+                <span>Logo: </span>
+                <input type="file" id="input_choose" hidden="hidden" accept="image/*" onchange="uploadFile(event)">
+                <button type="button" id="input_btn" class="input-btn">Choose A File</button>
+                <div style="margin-top: 5px;">
+                    <span>Company Name</span>
+                    <input type="text" name="name" id="cm_name" placeholder="Company Name" onkeyup="allValue(event)">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Phone Number</span>
+                    <input type="number" placeholder="Phone Number" id="cm_phone" onkeyup="allValue(event)">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Company Address</span>
+                    <input type="text" placeholder="Address" id="cm_address" onkeyup="allValue(event)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+</body>
+</html>
