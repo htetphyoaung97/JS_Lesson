@@ -17,20 +17,20 @@
                 <img alt="Logo" id="choose_logo" style="width: 50px;height:50px;">
             </div>
             <div>
-                <p><span><i class="fas fa-building"></i></span> Company Name : <span id="name"></span></p>
-                <p><span><i class="fas fa-phone-alt"></i></span> Company Phone Number : <span id="phone"></span></p>
-                <p><span><i class="fas fa-map-marker-alt"></i></span> Company Address : <span id="address"></span></p>
+                <p><span><i class="fas fa-building"></i></span> Company Name : <span class="name"></span></p>
+                <p><span><i class="fas fa-phone-alt"></i></span> Company Phone Number : <span class="phone"></span></p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> Company Address : <span class="address"></span></p>
             </div>
             <div style="width:60%;display: inline-block;">
 
-                <p><span><i class="fas fa-user"></i></span> Name : <span></span></p>
-                <p><span><i class="fas fa-phone-alt"></i></span> Phone Number : <span></span></p>
+                <p><span><i class="fas fa-user"></i></span> Name : <span class="customername"></span></p>
+                <p><span><i class="fas fa-phone-alt"></i></span> Phone Number : <span class="customerphone"></span></p>
 
             </div>
             <div style="width:39%;display: inline-block;">
 
-                <p><span><i class="fas fa-calendar-day"></i> Date : <span></span></p>
-                <p><span><i class="fas fa-ticket-alt"></i></span> Vouncher ID : <span></span></p>
+                <p><span><i class="fas fa-calendar-day"></i> Date : <span class="date"></span></p>
+                <p><span><i class="fas fa-ticket-alt"></i></span> Vouncher ID : <span class="vouncher"></span></p>
 
             </div>
           
@@ -44,10 +44,10 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="items"></td>
+                    <td class="total"></td>
+                    <td class="price"></td>
+                    <td class="amount"></td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -58,38 +58,81 @@
                 </tr>
             </table>
             <div style="text-align: right;">
-                <span>Discount: </span><p style="width: 132px; height:18px; border:1px solid; display: inline-block; margin:0px; padding:8px;">0</p>
+                <span>Discount: </span><p style="width: 132px; height:18px; border:1px solid; display: inline-block; margin:0px; padding:8px;" class="discount">0</p>
             </div>
             <div style="text-align: right;margin-top: 2px;">
-                <span>Total: </span><p style="width: 132px; height:18px; border:1px solid; display: inline-block; margin:0px; padding:8px;">0</p>
+                <span>Total: </span><p style="width: 132px; height:18px; border:1px solid; display: inline-block; margin:0px; padding:8px;" class="total-price">0</p>
             </div>
            
         </nav>
     </header>
     <section>
-        <div style="width: 900px;margin: 0 auto;padding: 18px;">
-            <div style="width: 24.75%;border: 1px solid;padding: 10px;">
+        <div style="width: 900px;margin: 0 auto;padding: 18px;display: flex;">
+            <div style="width: 24.75%;border: 1px solid;padding: 10px;margin-right: 10px;">
                 <p>Company Info</p>
                 <span>Logo: </span>
                 <input type="file" id="input_choose" hidden="hidden" accept="image/*" onchange="uploadFile(event)">
                 <button type="button" id="input_btn" class="input-btn">Choose A File</button>
                 <div style="margin-top: 5px;">
                     <span>Company Name</span>
-                    <input type="text" name="name" id="cm_name" placeholder="Company Name" onkeyup="allValue(event)">
+                    <input type="text" name="name" id="name" placeholder="Company Name" onkeyup="allValue(this)">
                 </div>
                 <div style="margin-top: 5px;">
                     <span>Phone Number</span>
-                    <input type="number" placeholder="Phone Number" id="cm_phone" onkeyup="allValue(event)">
+                    <input type="number" placeholder="Phone Number" id="phone" onkeyup="allValue(this)">
                 </div>
                 <div style="margin-top: 5px;">
                     <span>Company Address</span>
-                    <input type="text" placeholder="Address" id="cm_address" onkeyup="allValue(event)">
+                    <input type="text" placeholder="Address" id="address" onkeyup="allValue(this)">
                 </div>
+            </div>
+            <div style="width: 24.75%;border: 1px solid;padding: 10px;margin-right: 10px;">
+                <p>Customer Info</p>
+                <div style="margin-top: 5px;">
+                    <span>Your Name</span>
+                    <input type="text" name="name" id="customername" placeholder="Company Name" onkeyup="allValue(this)">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Your Phone Number</span>
+                    <input type="number" placeholder="Phone Number" id="customerphone" onkeyup="allValue(this)">
+                </div>
+            </div>
+            <div style="width: 24.75%;border: 1px solid;padding: 10px;margin-right: 10px;">
+                <p>Date Picker</p>
+                <div style="margin-top: 5px;">
+                    <span>Date</span>
+                    <input type="date" name="date" id="date" placeholder="date" onkeyup="allValue(this)">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Vouncher ID</span>
+                    <input type="number" placeholder="Vouncher ID" id="vouncher" onkeyup="allValue(this)">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Discount</span>
+                    <input type="number" placeholder="Discount" id="discount" onkeyup="allValue(this)">
+                </div>
+            </div>
+            <div style="width: 24.75%;border: 1px solid;padding: 10px;">
+                <p>Items Lists</p>
+                <div style="margin-top: 5px;">
+                    <span>Items</span>
+                    <input type="text" name="items" id="items" placeholder="Items">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Total</span>
+                    <input type="number" placeholder="Total" id="total">
+                </div>
+                <div style="margin-top: 5px;">
+                    <span>Price</span>
+                    <input type="number" placeholder="Price" id="price">
+                </div>
+                <button style="margin-top:5px;cursor:pointer;" onclick="addItems()">Add List</button>
             </div>
         </div>
     </section>
 
     <script src="js/script.js"></script>
     <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    
 </body>
 </html>

@@ -14,20 +14,28 @@
         
 //     // };
 // };
-let companyName = document.querySelector("#cm_name");
-let companyPhone = document.querySelector("#cm_phone");
-let companyAddress = document.querySelector("#cm_address");
 
 function allValue(event){
-    let vcValue = document.querySelector("#name");
-    let cmPhone = document.querySelector("#phone");
-    let cmAdderss = document.querySelector("#address");
-
-    vcValue.innerHTML = companyName.value;
-    cmPhone.innerHTML = companyPhone.value;
-    cmAdderss.innerHTML = companyAddress.value;
     
-      
+    document.querySelector('.' + event.id).innerHTML = event.value;
+   
+}
+
+function addItems(){
+
+   let itemList = document.querySelector("#items").value;
+   let totalItems = document.querySelector("#total").value;
+   let itemPrice = document.querySelector("#price").value;
+   let discountPrice = document.querySelector("#discount").value; 
+
+    document.querySelector(".items").innerHTML = itemList;
+    document.querySelector(".total").innerHTML = totalItems;
+    document.querySelector(".price").innerHTML = itemPrice;
+
+    let totalAmount = totalItems * itemPrice;
+    document.querySelector(".amount").innerHTML = totalAmount;
+    // document.querySelector(".total-price").innerHTML = totalAmount;
+    document.querySelector(".total-price").innerHTML = totalAmount - discountPrice;
 }
 
 
